@@ -1,12 +1,10 @@
-$('video, audio').mediaelementplayer({
-    features: ['playpause', 'progress', 'volume', 'fullscreen'],
+$('video').mediaelementplayer({
+    features: ['playpause','current', 'progress', 'duration', 'volume', 'fullscreen'],
     startLanguage: 'en',
-    skipBackInterval: 4
   });
 
   const video = document.getElementById('myVideo');
   const span = document.getElementsByTagName('span');
-
 
   video.addEventListener('timeupdate', () => {
     for (let i = 0; i < span.length; i++) {
@@ -21,3 +19,12 @@ $('video, audio').mediaelementplayer({
       }
     }
   });
+
+  //Click text goes to current time
+
+  for(let i = 0; i < span.length; i++) {
+    span[i].addEventListener('click', (event) => {
+      video.currentTime = event.target.getAttribute('data-start');
+      video.play();
+    });
+  }

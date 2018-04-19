@@ -15,4 +15,21 @@
   .videoWrapper {
     display: block;
   }
+  .highlight {
+    cursor: pointer;
+  }
   
+  /*Media Queries*/
+@media (min-width: 768px) {
+  .wrapper{
+    width: 768px;
+    margin: auto;
+  }
+  .videoWrapper {
+    width: 710px;
+    margin: auto;
+  }
+  .highlight {
+    cursor: pointer;
+  }
+} 
